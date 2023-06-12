@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "021734f8-732b-4198-8a67-024497d50734",
+		"name": "Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CALCULATE GROSS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n      \"grower\": 123456,\r\n      \"mass\": 115,\r\n      \"price\": 2.50,\r\n      \"grade\": \"TMOS\",\r\n      \"barcode\": 110000011\r\n    },\r\n    {\r\n      \"grower\": 123456,\r\n      \"mass\": 85,\r\n      \"price\": 4.50,\r\n      \"grade\": \"TLOS\",\r\n      \"barcode\": 110000012\r\n    },\r\n    {\r\n      \"grower\": 123456,\r\n      \"mass\": 95,\r\n      \"price\": 5.50,\r\n      \"grade\": \"TLOS\",\r\n      \"barcode\": 110000013\r\n    }\r\n  ]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/calculate_gross",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"calculate_gross"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PROCESS TAXES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n      \"grower\": 123456,\r\n      \"mass\": 115,\r\n      \"price\": 2.50,\r\n      \"grade\": \"TMOS\",\r\n      \"barcode\": 110000011\r\n    },\r\n    {\r\n      \"grower\": 123456,\r\n      \"mass\": 85,\r\n      \"price\": 4.50,\r\n      \"grade\": \"TLOS\",\r\n      \"barcode\": 110000012\r\n    },\r\n    {\r\n      \"grower\": 123456,\r\n      \"mass\": 95,\r\n      \"price\": 5.50,\r\n      \"grade\": \"TLOS\",\r\n      \"barcode\": 110000013\r\n    }\r\n  ]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/process_taxes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"process_taxes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PROCESS DEBTS LIST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"amount\": 1000.0, \"priority\": 1, \"interestRate\": 0.05},\r\n{\"amount\": 500.0, \"priority\": 2, \"interestRate\": 0.07},\r\n{\"amount\": 2500.0, \"priority\": 3, \"interestRate\": 0.03},\r\n{\"amount\": 750.0, \"priority\": 4, \"interestRate\": 0.06},\r\n{\"amount\": 2000.0, \"priority\": 5, \"interestRate\": 0.04},\r\n{\"amount\": 1500.0, \"priority\": 6, \"interestRate\": 0.08},\r\n{\"amount\": 3000.0, \"priority\": 7, \"interestRate\": 0.02},\r\n{\"amount\": 100.0, \"priority\": 8, \"interestRate\": 0.09},\r\n{\"amount\": 4000.0, \"priority\": 9, \"interestRate\": 0.01},\r\n{\"amount\": 1250.0, \"priority\": 10, \"interestRate\": 0.06}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/process_debts/20000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"process_debts",
+						"20000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PROCESS SALES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bales\": [\r\n    {\r\n      \"barcode\": \"110000010\",\r\n      \"grade\": \"TMOS\",\r\n      \"growerNumber\": \"G123\",\r\n      \"price\": 4.50,\r\n      \"mass\": 120\r\n    },\r\n    {\r\n      \"barcode\": \"110000011\",\r\n      \"grade\": \"TLOS\",\r\n      \"growerNumber\": \"G456\",\r\n      \"price\": 5.50,\r\n      \"mass\": 110\r\n    },\r\n    {\r\n      \"barcode\": \"110000012\",\r\n      \"grade\": \"TXLF\",\r\n      \"growerNumber\": \"G789\",\r\n      \"price\": 350,\r\n      \"mass\": 130\r\n    },\r\n    {\r\n      \"barcode\": \"110000013\",\r\n      \"grade\": \"TMOX\",\r\n      \"growerNumber\": \"G234\",\r\n      \"price\": 0.50,\r\n      \"mass\": 90\r\n    },\r\n    {\r\n      \"barcode\": \"110000014\",\r\n      \"grade\": \"TM1L\",\r\n      \"growerNumber\": \"G567\",\r\n      \"price\": 1.50,\r\n      \"mass\": 80\r\n    }\r\n  ],\r\n  \"debts\": [\r\n    {\r\n      \"amount\": 1000.0,\r\n      \"priority\": 1,\r\n      \"interestRate\": 0.05\r\n    },\r\n    {\r\n      \"amount\": 500.0,\r\n      \"priority\": 2,\r\n      \"interestRate\": 0.07\r\n    },\r\n    {\r\n      \"amount\": 2500.0,\r\n      \"priority\": 3,\r\n      \"interestRate\": 0.03\r\n    },\r\n    {\r\n      \"amount\": 750.0,\r\n      \"priority\": 4,\r\n      \"interestRate\": 0.06\r\n    },\r\n    {\r\n      \"amount\": 2000.0,\r\n      \"priority\": 5,\r\n      \"interestRate\": 0.04\r\n    }\r\n  ],\r\n  \"rebates\" : [\r\n      {\r\n          \"type\" : \"REBATE_1\",\r\n          \"amount\" : 25000\r\n      },\r\n       {\r\n          \"type\" : \"REBATE_2\",\r\n          \"amount\" : 25000\r\n      },\r\n       {\r\n          \"type\" : \"BOTH\",\r\n          \"amount\" : 25000\r\n      }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/process_sale",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"process_sale"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
